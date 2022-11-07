@@ -39,6 +39,10 @@ namespace ProductReviewManagement
             //UC4
             Console.WriteLine("\n------- Retrieves the count of reviews for each productID using groupBy -----\n");
             ProductManagement.RetrieveCountOfReviewForEachProductId(productReviewlist);
+
+            //UC5
+            Console.WriteLine("\n-------- Retrieves only the product id and review of all records ---------\n");
+            ProductManagement.RetrieveProductIDAndReviewOfAllRecords(productReviewlist);
             Console.ReadLine();
         }
     }
