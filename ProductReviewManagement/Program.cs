@@ -31,6 +31,10 @@ namespace ProductReviewManagement
             //UC2
             Console.WriteLine("\n-------- Display Top Three Records Who's Rating is High ------\n");
             ProductManagement.RetrieveTopThreeRatedRecords(productReviewlist);
+
+            //UC3
+            Console.WriteLine("\n------- Retrieves the records with rating greater than 3 and id=1 or 4 or 9 ------\n");
+            ProductManagement.RetrieveRecordsWithGreaterThanThreeRating(productReviewlist);
             Console.ReadLine();
         }
     }

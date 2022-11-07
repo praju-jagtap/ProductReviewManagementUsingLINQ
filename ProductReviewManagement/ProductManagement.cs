@@ -18,5 +18,14 @@ namespace ProductReviewManagement
                 Console.WriteLine("Product Id :" + productReview.ProductId + "\t" + "User Id :" + productReview.UserId + "\t" + "Rating :" + productReview.Rating + "\t" + "Review :" + productReview.Review + "\t" + "Is Like :" + productReview.isLike);
             }
         }
+        //UC3-Retrieves the records with rating greater than three.
+        public static void RetrieveRecordsWithGreaterThanThreeRating(List<ProductReview> list)
+        {
+            var recordedData = (from productReviews in list where (productReviews.ProductId == 1 || productReviews.ProductId == 4 || productReviews.ProductId == 9) && productReviews.Rating > 3 select productReviews);
+            foreach (var productReview in recordedData)
+            {
+                Console.WriteLine("Product Id :" + productReview.ProductId + "\t" + "User Id :" + productReview.UserId + "\t" + "Rating ;" + productReview.Rating + "\t" + "Review :" + productReview.Review + "\t" + "Is Like :" + productReview.isLike);
+            }
+        }
     }
 }
