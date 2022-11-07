@@ -47,6 +47,10 @@ namespace ProductReviewManagement
             //UC6
             Console.WriteLine("\n--------- Skip top 5 Records from the List and Display other Records -------\n");
             ProductManagement.SkipTopFiveRecords(productReviewlist);
+            
+            //UC7
+            Console.WriteLine("\n--------- Retrieve only productId and review from the list for all records using LINQ select operator ------\n");
+            ProductManagement.RetrieveProductIDAndReviewUsingLambdaSyntax(productReviewlist);
             Console.ReadLine();
         }
     }

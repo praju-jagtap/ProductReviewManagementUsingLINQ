@@ -54,5 +54,15 @@ namespace ProductReviewManagement
                 Console.WriteLine("Product Id :" + productReview.ProductId + "\t" + "User Id :" + productReview.UserId + "\t" + "Rating ;" + productReview.Rating + "\t" + "Review :" + productReview.Review + "\t" + "Is Like :" + productReview.isLike);
             }
         }
+        //UC7-Retrieve only productId and review from the list for all records using LINQ select operator.
+        public static void RetrieveProductIDAndReviewUsingLambdaSyntax(List<ProductReview> list)
+        {
+            //Query Syntax using lambda
+            var recordedData = list.Select(reviews => new { ProductId = reviews.ProductId, Review = reviews.Review });
+            foreach (var productReview in recordedData)
+            {
+                Console.WriteLine("Product ID : " + productReview.ProductId + "\t" + "Review : " + productReview.Review);
+            }
+        }
     }
 }
