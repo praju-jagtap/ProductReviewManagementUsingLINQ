@@ -36,13 +36,22 @@ namespace ProductReviewManagement
                 Console.WriteLine("ProductId : " + productReview.ProductId + "  Count : " + productReview.Count);
             }
         }
-        // UC5 Retrieves only the product id and review of all records.
+        // UC-Retrieves only the product id and review of all records.
         public static void RetrieveProductIDAndReviewOfAllRecords(List<ProductReview> list)
         {
             var recordedData = (from products in list select new { ProductId = products.ProductId, Review = products.Review });
             foreach (var productReview in recordedData)
             {
                 Console.WriteLine("Product ID : " + productReview.ProductId + "\t" + "Review : " + productReview.Review);
+            }
+        }
+        // UC6-Skip top five records from the list and display other records.
+        public static void SkipTopFiveRecords(List<ProductReview> list)
+        {
+            var recordedData = (from products in list select products).Skip(5);
+            foreach (var productReview in recordedData)
+            {
+                Console.WriteLine("Product Id :" + productReview.ProductId + "\t" + "User Id :" + productReview.UserId + "\t" + "Rating ;" + productReview.Rating + "\t" + "Review :" + productReview.Review + "\t" + "Is Like :" + productReview.isLike);
             }
         }
     }
