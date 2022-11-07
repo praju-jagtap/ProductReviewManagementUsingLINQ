@@ -35,6 +35,10 @@ namespace ProductReviewManagement
             //UC3
             Console.WriteLine("\n------- Retrieves the records with rating greater than 3 and id=1 or 4 or 9 ------\n");
             ProductManagement.RetrieveRecordsWithGreaterThanThreeRating(productReviewlist);
+            
+            //UC4
+            Console.WriteLine("\n------- Retrieves the count of reviews for each productID using groupBy -----\n");
+            ProductManagement.RetrieveCountOfReviewForEachProductId(productReviewlist);
             Console.ReadLine();
         }
     }

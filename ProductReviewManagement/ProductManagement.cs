@@ -27,5 +27,14 @@ namespace ProductReviewManagement
                 Console.WriteLine("Product Id :" + productReview.ProductId + "\t" + "User Id :" + productReview.UserId + "\t" + "Rating ;" + productReview.Rating + "\t" + "Review :" + productReview.Review + "\t" + "Is Like :" + productReview.isLike);
             }
         }
+        // UC4-Retrieves the count of reviews for each productID using groupBy.
+        public static void RetrieveCountOfReviewForEachProductId(List<ProductReview> list)
+        {
+            var recordedData = (list.GroupBy(p => p.ProductId).Select(x => new { ProductId = x.Key, Count = x.Count() }));
+            foreach (var productReview in recordedData)
+            {
+                Console.WriteLine("ProductId : " + productReview.ProductId + "  Count : " + productReview.Count);
+            }
+        }
     }
 }
