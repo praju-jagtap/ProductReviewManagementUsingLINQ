@@ -28,6 +28,9 @@ namespace ProductReviewManagement
             {
                 Console.WriteLine("Product Id :" + list.ProductId + "\t" + "User Id :" + list.UserId + "\t" + "Rating :" + list.Rating + "\t" + "Review :" + list.Review + "\t" + "Is Like :" + list.isLike);
             }
+            //UC2
+            Console.WriteLine("\n-------- Display Top Three Records Who's Rating is High ------\n");
+            ProductManagement.RetrieveTopThreeRatedRecords(productReviewlist);
             Console.ReadLine();
         }
     }
